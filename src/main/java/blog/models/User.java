@@ -11,7 +11,8 @@ public class User {
     private String fullName;
     private Set<Post> posts = new HashSet<>();
 
-    public User() {}
+    public User() {
+    }
 
     public User(Long id, String username, String fullName) {
         this.id = id;

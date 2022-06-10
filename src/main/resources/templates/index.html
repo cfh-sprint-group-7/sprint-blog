@@ -1,36 +1,14 @@
-<!--modify the home page view to display the latest 3 posts at index.html on 6/9-->
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" >
+<html xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="layout :: site-head">
-<!--    <meta charset="UTF-8" />-->
-    <title>Spring MVC Blog</title>
+<head>
+    <meta charset="UTF-8" />
+    <title>Blog</title>
 </head>
 
 <body>
-<header th:replace="layout :: site-header"></header>
-<aside>
-    <h2>Recent Posts</h2>
-    <a href=“#” th:each=“p : ${latest5posts}” th:text=“${p.title}” th:href=“@{/posts/view/{id}/(id=${p.id})}”>Work Begins on HTML5.1</a>
-</aside>
-
-<main id="posts">
-    <article th:each="p : ${latest3posts}">
-        <h2 class="title" th:text="${p.title}">Post Title</h2>
-        <div class="date">
-            <em>Posted on</em>
-            <span th:each="${#dates.format(p.date, 'dd-MMM-yyy')}">22-May-2016</span>
-            <span th:if="${p.author}" th:remove="tage">
-                <em>by</em>
-                <span th:text="${p.auther.fullName !=null ? p.author.fullName : p.author.username}"> Svetlin Nokov</span>
-            </span>
-        </div>
-        <p class="content" th:utext="${p.body}">Post content</p>
-    </article>
-</main>
-<footer th:replace="layout :: site-footer"></footer>
-<!--<h1>Welcome to Spring MVC</h1>-->
-<!--    Now is: <b th:text="${execInfo.now.time}"></b>-->
+<h1>Welcome to Spring MVC</h1>
+    Now is: <b th:text="${execInfo.now.time}"></b>
 </body>
 
 </html>

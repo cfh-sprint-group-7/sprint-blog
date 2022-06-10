@@ -1,4 +1,4 @@
-package blog.models;
+package blog.services;
 
 public class MockClass {
 }
