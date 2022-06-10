@@ -1,5 +1,7 @@
 package blog.models;
+
 import java.util.Date;
+import blog.models.User;
 
 public class Post {
 
@@ -9,7 +11,8 @@ public class Post {
     private User author;
     private Date date = new Date();
 
-    public Post() {}
+    public Post() {
+    }
 
     public Post(Long id, String title, String body, User author) {
         this.id = id;
