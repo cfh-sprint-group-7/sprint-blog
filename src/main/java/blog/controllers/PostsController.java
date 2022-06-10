@@ -34,8 +34,4 @@ public class PostsController {
         model.addAttribute("post", post);
         return "posts/view";
     }
-
-    /* (issue BLOG-58) End of changes for notification system */
-
-
 }
