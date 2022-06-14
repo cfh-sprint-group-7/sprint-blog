@@ -46,8 +46,10 @@
     </nav>
     <br><br><br><br><br><br>
     <div class="col-md-6 col-md-offset-3">
+        
         <h2> Create a post </h2>
         <form action="#" th:action="@{/savePost}" th:object="${post}" method="POST">
+
             <div class="form-group">
                 <label for="username"> Title of the post </label>
                 <input type="text" th:field="*{title}" class="form-control mb-4 col-4" required>
