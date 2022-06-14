@@ -378,21 +378,3 @@ body{
   
    width:50%;text-align:center;padding:2px;margin:0 auto
  }
-
-ul.messages-popup li {
-    display: block;
-    width: 80%;
-    margin: 5px auto;
-    text-align: center;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-ul.messages-popup li.info {
-    background: #7f7;
-}
-
-ul.messages-popup li.error {
-    background: #d00;
-    color: white;
-}

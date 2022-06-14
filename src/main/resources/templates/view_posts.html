@@ -95,7 +95,7 @@
       <tr th:each="post : ${posts}">
         <td>
           <a id="postname" th:text="${post.title}"
-             th:href="@{/post/{id}(id=${post.id})}">
+             th:href="@{/post/view/{id}(id=${post.id})}">
           </a>
         </td>
         <td th:text="${post.date}"></td>

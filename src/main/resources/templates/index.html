@@ -44,16 +44,6 @@
             </div>
         </div>
     </nav>
-    <ul id="messages-popup" th:with="notifyMessages=${session[T(blog.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY]}">
-        <li th:class="${#strings.toLowerCase(msg.type)}" th:each="msg:${notifyMessages}"
-            th:text="${msg.text}">
-        </li>
-        <span th:if="${notifyMessages}" th:remove="all" th:text="${#session.removeAttribute(
-            T(blog.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY)}">
-
-            </span>
-
-    </ul>
     <br>
     <br>
     <div id="container1">

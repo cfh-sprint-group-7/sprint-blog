@@ -2,15 +2,12 @@ package blog.controllers;
 
 import java.util.List;
 
-import blog.repositories.PostRepository;
-import blog.services.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-// import org.springframework.web.bind.annotation.RequestParam;
 
 import blog.models.Post;
 import blog.services.PostService;
@@ -21,9 +18,6 @@ public class PostController {
 
     @Autowired
     private PostService postService;
-
-    @Autowired
-    private NotificationService notifyService;
 
     @GetMapping("/")
     public String viewHomePage(Model model) {
@@ -54,10 +48,6 @@ public class PostController {
     @GetMapping("/post/view/{id}")
     public String viewPost (@PathVariable(value = "id") Long id, Model model) {
         Post post = postService.getPostById(id);
-        if (post == null) {
-            notifyService.addErrorMessage("Cannot find post #" + id);
-            return "redirect:/";
-        }
         model.addAttribute("post", post);
         return "/view";
     }
