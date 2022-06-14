@@ -48,8 +48,8 @@
     </div>
     <div class="col-md-6 col-md-offset-3">
         <h2>Are you sure you want to delete?</h2>
-        <a th:href="@{'/deletePost/' + ${post.id} + '/confirm'}" class="btn btn-danger" id="deletebutton">Yes</a>
-        <a th:href="@{/}" class="btn btn-primary" id="deletebutton">No, go back</a>
+        <a onclick='javascript:window.history.back()' th:href="@{'/deletePost/' + ${post.id} + '/confirm'}" class="btn btn-danger" id="deletebutton">Yes</a>
+        <a onclick='javascript:window.history.back()' class="btn btn-primary" id="deletebutton">No, go back</a>
     </div>
 </body>
 

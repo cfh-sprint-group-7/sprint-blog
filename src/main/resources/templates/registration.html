@@ -33,7 +33,7 @@
 					<li><a th:href="@{/}">Home</a></li>
 					<li><a th:href="@{/login}">Login</a></li>
 					<li sec:authorize="isAuthenticated()"><a th:href="@{/registration}">Register</a></li>
-					<li sec:authorize="isAuthenticated()"><a th:href="@{/view}">Posts</a></li>
+					<li sec:authorize="isAuthenticated()"><a th:href="@{/view_posts}">Posts</a></li>
 					<li sec:authorize="isAuthenticated()"><a th:href="@{/post/new}">Create Post</a></li>
 					<li sec:authorize="isAuthenticated()"><a th:href="@{/}">User</a></li>
 					<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>

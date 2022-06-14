@@ -3,7 +3,11 @@ package blog.services;
 import blog.models.Post;
 import org.springframework.data.domain.Page;
 
+import java.util.List;
+
 public interface PostService {
+
+    List<Post> getAllPosts();
 
     void savePost(Post post);
 
@@ -11,7 +15,8 @@ public interface PostService {
 
     void deletePostById(long id);
 
-    Page<Post> findPaginated(int pageNum, int pageSize);
+    Page<Post> findPaginated(int pageNum, int pageSize,
+                             String sortField, String sortDirection);
 
-    Page<Post> findpages(int pageNo);
+    Page<Post> findPages(int pageNo);
 }
