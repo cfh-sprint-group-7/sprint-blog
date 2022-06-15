@@ -30,6 +30,9 @@
 				</a>
 			</div>
 			
+			<div class="error" th:if="${param=='success'}">
+				<p>success</p>
+			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li><a th:href="@{/}">Home</a></li>
@@ -54,6 +57,7 @@
 				<form th:action="@{/login}" method="post">
 					<!-- Login message -->
 					<div th:if="${param.success}">
+						<input type="hidden" th:param="success"/>
 						<div class="alert alert-info">You have successfully Logged in.</div>
 					</div>
 					
