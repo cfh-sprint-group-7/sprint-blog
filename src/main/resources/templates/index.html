@@ -67,7 +67,7 @@
                 <div class="face face2">
                     <div class="content">
                         <p class="card-text" th:text="${post.content}"></p>
-                        <a th:href="@{/post/{id}/update(id=${post.id})}" class="btn btn-primary" id="updatebutton">Update</a>
+                        <a th:href="@{/post/{id}/update(id=${post.id})}" class="btn btn-primary" id="updatebutton">Edit</a>
                         <a th:href="@{/post/{id}/delete(id=${post.id})}" class="btn btn-danger"
                             id="deletebutton">Delete</a>
                     </div>

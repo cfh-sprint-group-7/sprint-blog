@@ -101,7 +101,7 @@
         <td th:text="${post.date}"></td>
         <td th:text="${post.content}"></td>
         <td>
-          <a th:href="@{/post/{id}/update(id=${post.id})}" class="btn btn-primary">Update</a>
+          <a th:href="@{/post/{id}/update(id=${post.id})}" class="btn btn-primary">Edit</a>
           <a th:href="@{/post/{id}/delete(id=${post.id})}" class="btn btn-danger">Delete</a>
         </td>
       </tr>
