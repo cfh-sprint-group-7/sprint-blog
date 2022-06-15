@@ -14,7 +14,7 @@
 	<script src="../public/js/blog-scripts.js" th:src="@{/js/blog-scripts.js}"></script>	
 </head>
 <body>
-	<!-- create navigation bar ( header) -->
+
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -29,7 +29,9 @@
 					<img src="../public/img/site-logo_white.png" th:src="@{/img/site-logo_white.png}" id = "siteLogo" />
 				</a>
 			</div>
-			
+			<div class="error" th:if="${param=='success'}">
+				<p>success</p>
+			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li><a th:href="@{/}">Home</a></li>
@@ -43,6 +45,7 @@
 			</div>
 		</div>
 	</nav>
+	
 	<br/>
 	<br/>
 	<div id = "container">
@@ -52,22 +55,22 @@
 				<h2> Login </h2>
 				<br/>
 				<form th:action="@{/login}" method="post">
-					<!-- Login message -->
+					
+					<!-- Login message needs fix -->
 					<div th:if="${param.success}">
 						<div class="alert alert-info">You have successfully Logged in.</div>
 					</div>
 					
-					<!-- error message -->
 					<div th:if="${param.error}">
 						<div class="alert alert-danger">Invalid username or
 							password.</div>
 					</div>
 				
-					<!-- logout message -->
 					<div th:if="${param.logout}">
 						<div class="form-group" id="messages">You have successfully logged out.</div>
 					</div>
 					
+					<!-- Login form -->
 					<div class = "form-group">
 						<label for ="username"> Username </label> :
 						<input type="text" class = "form-control" id ="username" name = "username"
@@ -96,6 +99,7 @@
 			</div>
 		</div>
 	</div>
+
 	<footer th:fragment="site-footer" id="footerdoc">
 		<br><br><br><br><br>
 		&copy; Carolina Fintech Hub Blog, Group 7.

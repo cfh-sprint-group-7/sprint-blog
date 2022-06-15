@@ -47,94 +47,61 @@
   <br>
   <br>
   <div id="container1">
-    <h3>Welcome to the Carolina Fintech Hub Blog.</h3>
-    <h5>All Posts.</h5>
-    </div>
-<!--    <div th:each="post : ${listPosts}">-->
-<!--      <div class="card">-->
-<!--          <div class="card-header">-->
-<!--              <p>Created on: <span th:text="${post.date}"></span></p>-->
-<!--          </div>-->
-<!--          <div class="card-body">-->
-<!--              <h5 class="card-title">-->
-<!--                  <a href="/" th:text="${post.title}" th:href="@{/posts/{id}(id=${post.id})}"></a>-->
-<!--              </h5>-->
-<!--              <p class="card-text" th:text="${post.content}"></p>-->
-<!--              <a th:href="@{'/post/' + ${post.id} + '/update' }" class="btn btn-primary">Update</a>-->
-<!--              <a th:href="@{/deletePost/{id}(id=${post.id})}" class="btn btn-danger">Delete</a>-->
-<!--          </div>-->
-<!--      </div>-->
-<!--  </div>-->
-
-    <div th:if="${param.success}" class="alert alert-info" id="messages">You have successfully logged in.</div>
-    <div th:if="${param.logout}" class="alert alert-info" id="messages">You have successfully logged out.</div>
-    <div class="alert delete-alert" th:if="${param.deleted}">Post has been successfully deleted</div>
-    <div class="container my-2 post-container">
-      <a sec:authorize="isAuthenticated()" th:href="@{/post/new}" class="btn btn-primary btn-sm mb-3"
-         id="addpostbutton"> Add Post </a>
-    <br>
-
-    <table border="1" class="table table-striped table-responsive-md">
-      <thead>
-      <tr>
-        <th>
-          <a th:href="@{'/page/' + ${currentPage} + '?sortField=title&sortDir=' + ${reverseSortDir}}">
-            Post Title
-          </a>
-        </th>
-        <th><a th:href="@{'/page/' + ${currentPage} + '?sortField=date&sortDir=' + ${reverseSortDir}}">
-          Time Posted
-        </a></th>
-        <th>
-          Post Content
-        </th>
-        <th>Actions</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr th:each="post : ${posts}">
-        <td>
-          <a id="postname" th:text="${post.title}"
-             th:href="@{/post/view/{id}(id=${post.id})}">
-          </a>
-        </td>
-        <td th:text="${post.date}"></td>
-        <td th:text="${post.content}"></td>
-        <td>
-          <a th:href="@{/post/{id}/update(id=${post.id})}" class="btn btn-primary">Update</a>
-          <a th:href="@{/post/{id}/delete(id=${post.id})}" class="btn btn-danger">Delete</a>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-
-    <div th:if = "${totalPages > 1}">
-      <div class="row col-sm-10">
-        <div class="col-sm-2">
-          Total Rows: [[${totalItems}]]
-        </div>
-        <div class="col-sm-1">
-                <span th:each="i: ${#numbers.sequence(1, totalPages)}">
-                    <a th:if="${currentPage != i}" th:href="@{'/page/' + ${i}
-                    + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">[[${i}]]</a>
-                    <span th:unless="${currentPage != i}">[[${i}]]</span> &nbsp; &nbsp;
-                </span>
-        </div>
-        <div class="col-sm-1">
-          <a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${currentPage + 1}
-                 + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Next</a>
-          <span th:unless="${currentPage < totalPages}">Next</span>
-        </div>
-        <div class="col-sm-1">
-          <a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${totalPages}
-                 + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Last</a>
-          <span th:unless="${currentPage < totalPages}">Last</span>
-        </div>
-      </div>
-    </div>
+    <h3 id="welcome">Welcome to the Carolina Fintech Hub Blog.</h3>
+    <h4 id="allpostsview">All Posts.</h4>
+    <!-- <hr id="line"> -->
   </div>
-  <footer th:fragment="site-footer">
-    &copy; Carolina Fintech Hub Blog.
+
+  <div th:if="${param.success}" class="alert alert-info" id="messages">You have successfully logged in.</div>
+  <div th:if="${param.logout}" class="alert alert-info" id="messages">You have successfully logged out.</div>
+  <div class="alert delete-alert" th:if="${param.deleted}">Post has been successfully deleted</div>
+
+  <br>
+  <div id="centertable">
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <a th:href="@{'?sortField=title&sortDir=' + ${reverseSortDir}}" id="tabletitle">
+              Post Title
+            </a>
+          </th>
+          <th><a th:href="@{'?sortField=date&sortDir=' + ${reverseSortDir}}" id="tabletitle">
+              Time Posted
+            </a></th>
+          <th id="tabletitles">
+            Post Content
+          </th>
+          <th id="tabletitles">Actions</th>
+        </tr>
+
+      </thead>
+      <div class="posts-container">
+        <tbody>
+          <tr th:each="post : ${posts}">
+            <td>
+              <div class="posts-preview">
+                <a id="postname2" th:text="${post.title}" th:href="@{/post/view/{id}(id=${post.id})}"></a>
+              </div>
+            </td>
+
+            <td>
+              <div class="posts-info">
+                <h5>Created on: <br /> <span th:text="${post.date}"></span></h5>
+                <p class="card-text" id="postscontents" th:text="${post.content}"></p>
+                <a th:href="@{/post/{id}/update(id=${post.id})}" class="btn btn-primary" id="updatebutton1">Update</a>
+                <a th:href="@{/post/{id}/delete(id=${post.id})}" class="btn btn-danger" id="deletebutton1">Delete</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </div>
+    </table>
+  </div>
+
+  <footer th:fragment="site-footer" id="footerdoc">
+    &copy; Carolina Fintech Hub Blog, Group 7.
   </footer>
 </body>
+
 </html>

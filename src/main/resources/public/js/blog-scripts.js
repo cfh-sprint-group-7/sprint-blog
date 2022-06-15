@@ -14,3 +14,4 @@ $(function() {
 /*
 (issue BLOG-58) End JS changes
  */
+

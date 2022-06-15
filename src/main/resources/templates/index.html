@@ -17,11 +17,6 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
-                        class="icon-bar"></span>
-                </button>
                 <a>
                     <img src="../public/img/site-logo_white.png" th:src="@{/img/site-logo_white.png}" id="siteLogo" />
                 </a>
@@ -36,9 +31,7 @@
                     <li sec:authorize="isAuthenticated()"><a th:href="@{/}">User</a></li>
                     <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
                     <!-- <li id="logged-in-info">
-						<form method="post" th:action="@{/logout}" >
-							<span>Hello</span> <a th:href="@{registration/{id}(id=${registration.firstName})}"></a>
-						</form>
+							<span>Hello</span> <a th:href="@{/user/{id}(id=${User.firstName})}"></a>
 					</li> -->
                 </ul>
             </div>
@@ -47,14 +40,16 @@
     <br>
     <br>
     <div id="container1">
-        <h3>Welcome to the Carolina Fintech Hub Blog.</h3>
+        <h3 id="welcome">Welcome to the Carolina Fintech Hub Blog.</h3>
+        <h4 id="recentpostsview">Recent Posts</h4>
     </div>
     <div th:if="${param.success}" class="alert alert-info" id="messages">You have successfully logged in.</div>
     <div th:if="${param.logout}" class="alert alert-info" id="messages">You have successfully logged out.</div>
-    <div class="alert delete-alert" th:if="${param.deleted}">Post has been successfully deleted</div>
+    <div th:if="${param.deleted}">Post has been successfully deleted</div> <!-- needs fix -->
+    
     <div class="container my-2 post-container">
-        <a sec:authorize="isAuthenticated()" th:href="@{/post/new}" class="btn btn-primary btn-sm mb-3"
-            id="addpostbutton"> Add Post </a>
+        <!-- <a sec:authorize="isAuthenticated()" th:href="@{/post/new}" class="btn btn-primary btn-sm mb-3"
+            id="addpostbutton"> Add Post </a> -->
         <div th:each="post : ${listPosts}">
             <div class="card">
                 <div class="face face1">
@@ -71,27 +66,6 @@
                         <a th:href="@{/post/{id}/delete(id=${post.id})}" class="btn btn-danger"
                             id="deletebutton">Delete</a>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div th:if="${totalPages > 1}">
-            <div class="row col-sm-10">
-                <div class="col-sm-2">
-                    Total Posts: [[${totalItems}]]
-                </div>
-                <div class="col-sm-1">
-                    <span th:each="i: ${#numbers.sequence(1, totalPages)}">
-                        <a th:if="${currentPage != i}" th:href="@{'/page/' + ${i}}">[[${i}]]</a>
-                        <span th:unless="${currentPage != i}">[[${i}]]</span> &nbsp; &nbsp;
-                    </span>
-                </div>
-                <div class="col-sm-1">
-                    <a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${currentPage + 1}}">Next</a>
-                    <span th:unless="${currentPage < totalPages}">Next</span>
-                </div>
-                <div class="col-sm-1">
-                    <a th:if="${currentPage < totalPages}" th:href="@{'/page/' + ${totalPages}}">Last</a>
-                    <span th:unless="${currentPage < totalPages}">Last</span>
                 </div>
             </div>
         </div>
