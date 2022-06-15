@@ -89,7 +89,7 @@
               <div class="posts-info">
                 <h5>Created on: <br /> <span th:text="${post.date}"></span></h5>
                 <p class="card-text" id="postscontents" th:text="${post.content}"></p>
-                <a th:href="@{/post/{id}/update(id=${post.id})}" class="btn btn-primary" id="updatebutton1">Update</a>
+                <a th:href="@{/post/{id}/update(id=${post.id})}" class="btn btn-primary" id="updatebutton1">Edit</a>
                 <a th:href="@{/post/{id}/delete(id=${post.id})}" class="btn btn-danger" id="deletebutton1">Delete</a>
               </div>
             </td>
