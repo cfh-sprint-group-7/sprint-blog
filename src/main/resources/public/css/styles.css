@@ -1,31 +1,7 @@
-/*
-Robel, here are the colors for CFH:
-
-Maroon
-HEX - #3A1027
-RGB - 58,16,39
-CMYK - 58,89,54,66
-
-Yellow
-HEX - #FEBF10
-RGB - 254,191,16
-CMYK - 0,27,100,0
-
-Orange
-HEX - #f47a37
-RGB - 244,122,55
-CMYK - 0,64,88,0
-
-Pink
-HEX - #D91A5F
-RGB - 217,26,95
-CMYK - 10,100,46,0
-
-Additional logos and stuff can be found at:
-https://www.carolinafintechhub.org/
-
- */
-
+html {
+  width:100vw;
+  height: 100vh;
+}
 #siteLogo {
   width: 200px;
   margin-left: -30px;
@@ -63,7 +39,7 @@ https://www.carolinafintechhub.org/
   background-color: #333;
   border-color: #f47a37;
   color: #fff;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 2);
 }
 
 #deletebutton {
@@ -75,13 +51,15 @@ https://www.carolinafintechhub.org/
 #updatebutton1 {
   background-color: #333;
   border-color: #f47a37;
-  color: #a0a0a0;
+  color: #fff;
+  box-shadow: 0 0 0.5px 0.5px #f47a37;
 }
 
 #deletebutton1 {
   background-color: #333;
   border-color: #d91a5f;
-  color: #a0a0a0;
+  color: #fff;
+  box-shadow: 0 0 0.5px 0.5px #d91a5f;
 }
 
 #footerdoc {
@@ -99,12 +77,6 @@ h3 {
   /* color:#333; */
   margin-top: 60px;
   margin-left: 70px;
-}
-
-#line {
-  color: #d91a5f;
-  margin-left: 40px;
-  width: 85px;
 }
 
 #messages {
@@ -146,14 +118,13 @@ h5 {
 
 #postname2 {
   font-size: large;
-  color: #a0a0a0;
+  color: #f47a37;
 }
 
 body {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  /* background: #Fff; */
+  height: 100vh;
   background: #333;
   justify-content: center;
   align-items: center;
@@ -251,6 +222,17 @@ body {
   color: #fff;
 }
 
+#allpostsviews {
+  color:#f47a37;
+  margin-left: 3%;
+  font-size: medium;
+}
+
+#welcomes {
+  color:#a0a0a0;
+  margin-left: 3%;
+}
+
 .form-group {
   color: #a0a0a0;
   border-color: #3a1027;
@@ -299,10 +281,11 @@ h2 {
   padding: 2px;
   margin: 0 auto;
 }
+
 #centertable {
   margin-top: -30px;
   width: 800px;
-  margin-left: 130px;
+  margin-left: auto;
   margin-right: auto;
 }
 
@@ -312,7 +295,7 @@ thead {
 
 table {
   border-collapse: separate;
-  border-spacing: 0 20px;
+  border-spacing: 0 40px;
   border: none;
   margin-left: auto;
   margin-right: auto;
@@ -328,32 +311,53 @@ tr {
   padding-bottom: 10px;
 }
 tr:hover {
-  background-color: #f47a37;
+  background-color: #333;
   transform: scale(1.1);
 }
 
 .posts-container {
-  background-color: #fff;
+  background-color: #333;
   display: flex;
   overflow: wrap;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .posts-preview {
-  background-color: #3a1027;
-  /* background-color: #fff; */
+  background-color:#3a1027;
   color: #fff;
   padding: 10px;
-  border: 0.5px solid #a0a0a0;
+  border-radius: 5px;
+  text-align: center;
+  /* box-shadow: 0 0 1px 1px #d91a5f; */
+  width: 70%;
 }
 
 .posts-info {
-  background-color: #333;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
   padding: 20px;
-  position: relative;
-}
+  text-align: center;
+  background: #242625; 
+  box-shadow: 0 1px 1px #d91a5f;
+  border-radius: 10px;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 70%;
+  }
+
+  
 
 #postscontents {
-  color: #a0a0a0;
+  color: #fff;
   font-size: medium;
 }
+
+#container2 {
+width:100%;
+padding: 0.2%;
+background-color: #242625;
+margin-top: -0.5%;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
+

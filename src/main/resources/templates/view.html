@@ -3,14 +3,18 @@
 
 <head>
     <meta charset="ISO-8859-1">
-    <title>View Post</title>
+    <title>View Post | Carolina Fintech Hub Blog</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="../public/img/favicon.png" th:href="@{/img/favicon.png}">
     <link rel="stylesheet" href="../public/css/styles.css" th:href="@{/css/styles.css}">
-    <script src="../../static/js/jquery-3.6.0.js" th:src="@{/js/jquery-3.6.0.js}"></script>
-    <script src="../../static/js/blog-scripts.js" th:src="@{/js/blog-scripts.js}"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Consolas&display=swap');
+        body {
+          font-family: 'Consolas', sans-serif;
+        }
+      </style>
 </head>
 
 <body>
@@ -34,15 +38,16 @@
                 <li sec:authorize="isAuthenticated()"><a th:href="@{/registration}">Register</a></li>
                 <li sec:authorize="isAuthenticated()"><a th:href="@{/view_posts}">Posts</a></li>
                 <li sec:authorize="isAuthenticated()"><a th:href="@{/post/new}">Create Post</a></li>
-                <li sec:authorize="isAuthenticated()"><a th:href="@{/}">User</a></li>
+                <!-- <li sec:authorize="isAuthenticated()"><a th:href="@{/}">User</a></li> -->
                 <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
             </ul>
         </div>
     </div>
 </nav>
 <br><br><br><br><br><br>
+
 <div class="col-md-6 col-md-offset-3">
-    <h2>View Post</h2>
+    <!-- <h4 id="recentpostsview">Post Details</h4> -->
     <div>
         <h2 th:object="${post}" th:text="*{title}"></h2>
     </div>
