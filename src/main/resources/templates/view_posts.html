@@ -66,6 +66,9 @@
               Post Title
             </a>
           </th>
+          <th id="tabletitles">
+            Post Author
+          </th>
           <th><a th:href="@{'?sortField=date&sortDir=' + ${reverseSortDir}}" id="tabletitle">
               Time Posted
             </a></th>
@@ -87,6 +90,7 @@
 
             <td>
               <div class="posts-info">
+                <h5>Posted by: <br /> <span th:text="${post.author}"></span></h5>
                 <h5>Created on: <br /> <span th:text="${post.date}"></span></h5>
                 <p class="card-text" id="postscontents" th:text="${post.content}"></p>
                 <a th:href="@{/post/{id}/update(id=${post.id})}" class="btn btn-primary" id="updatebutton1">Edit</a>

@@ -25,14 +25,18 @@ public class Post {
     @Column(name="content")
     private String content;
 
+    @Column(name="author")
+    private String author;
+
     public Post() {
         this.date = new Date();
     }
 
-    public Post(String title, String content) {
+    public Post(String title, String content, String author) {
         this.title = title;
         this.date = new Date();
         this.content = content;
+        this.author = author;
     }
 
     public Long getId() {
@@ -65,6 +69,14 @@ public class Post {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     @Override

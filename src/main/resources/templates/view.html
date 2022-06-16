@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -49,9 +49,15 @@
     <div>
         <p style="color:white;" th:object="${post}" th:text="*{content}"></p>
     </div>
+    <div style="color:white;">
+        Posted by: <span th:object="${post}" th:text="*{author}"></span>
+    </div>
+    <div style="color:white;">
+        Posted on: <span th:object="${post}" th:text="*{date}"></span>
+    </div>
     <hr>
     <a th:href="@{/}" id="alreadyregistered"> Back to Post List</a>
 </div>
 </body>
 
-</html> -->
+</html>
