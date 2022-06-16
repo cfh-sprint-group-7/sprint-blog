@@ -3,13 +3,17 @@
 
 <head>
   <meta charset="ISO-8859-1">
-  <title>CfhAllPosts</title>
+  <title>Posts | Carolina Fintech Hub Blog</title>
   <link rel="icon" type="image/x-icon" href="../public/img/favicon.png" th:href="@{/img/favicon.png}">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="../public/css/styles.css" th:href="@{/css/styles.css}">
-  <script src="../public/js/jquery-3.6.0.js" th:src="@{/js/jquery-3.6.0.js}"></script>
-  <script src="../public/js/blog-scripts.js" th:src="@{/js/blog-scripts.js}"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Consolas&display=swap');
+    body {
+      font-family: 'Consolas', sans-serif;
+    }
+  </style>
 </head>
 
 <body>
@@ -33,7 +37,7 @@
           <li><a th:href="@{/registration}">Register</a></li>
           <li sec:authorize="isAuthenticated()"><a th:href="@{/view_posts}">Posts</a></li>
           <li sec:authorize="isAuthenticated()"><a th:href="@{/post/new}">Create Post</a></li>
-          <li sec:authorize="isAuthenticated()"><a th:href="@{/}">User</a></li>
+          <!-- <li sec:authorize="isAuthenticated()"><a th:href="@{/}">User</a></li> -->
           <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
           <!-- <li id="logged-in-info">
 						<form method="post" th:action="@{/logout}" >
@@ -47,15 +51,12 @@
   <br>
   <br>
   <div id="container1">
-    <h3 id="welcome">Welcome to the Carolina Fintech Hub Blog.</h3>
-    <h4 id="allpostsview">All Posts.</h4>
-    <!-- <hr id="line"> -->
+    <h3 id="welcomes">Welcome to the Carolina Fintech Hub Blog.</h3>
+    <h4 id="allpostsviews">All Posts.</h4>
   </div>
-
   <div th:if="${param.success}" class="alert alert-info" id="messages">You have successfully logged in.</div>
   <div th:if="${param.logout}" class="alert alert-info" id="messages">You have successfully logged out.</div>
-  <div class="alert delete-alert" th:if="${param.deleted}">Post has been successfully deleted</div>
-
+  <div th:if="${param.deleted}" class="alert delete-alert">Post has been successfully deleted</div>
   <br>
   <div id="centertable">
     <table>
@@ -74,7 +75,6 @@
           </th>
           <th id="tabletitles">Actions</th>
         </tr>
-
       </thead>
       <div class="posts-container">
         <tbody>
@@ -84,11 +84,10 @@
                 <a id="postname2" th:text="${post.title}" th:href="@{/post/view/{id}(id=${post.id})}"></a>
               </div>
             </td>
-
             <td>
               <div class="posts-info">
-                <h5>Created on: <br /> <span th:text="${post.date}"></span></h5>
                 <p class="card-text" id="postscontents" th:text="${post.content}"></p>
+                <h5>Created on: <span th:text="${post.date}"></span></h5>
                 <a th:href="@{/post/{id}/update(id=${post.id})}" class="btn btn-primary" id="updatebutton1">Update</a>
                 <a th:href="@{/post/{id}/delete(id=${post.id})}" class="btn btn-danger" id="deletebutton1">Delete</a>
               </div>
@@ -98,7 +97,6 @@
       </div>
     </table>
   </div>
-
   <footer th:fragment="site-footer" id="footerdoc">
     &copy; Carolina Fintech Hub Blog, Group 7.
   </footer>
