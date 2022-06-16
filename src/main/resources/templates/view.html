@@ -47,11 +47,10 @@
 <br><br><br><br><br><br>
 
 <div class="col-md-6 col-md-offset-3">
-    <!-- <h4 id="recentpostsview">Post Details</h4> -->
-    <div>
-        <h2 th:object="${post}" th:text="*{title}"></h2>
+    <div class="posts-preview">
+        <h4 style="color:#f47a37;" th:object="${post}" th:text="*{title}"></h4>
     </div>
-    <div>
+    <div class="posts-info">
         <p style="color:white;" th:object="${post}" th:text="*{content}"></p>
     </div>
     <hr>

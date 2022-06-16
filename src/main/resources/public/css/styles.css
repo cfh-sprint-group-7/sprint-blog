@@ -282,12 +282,6 @@ h2 {
   margin: 0 auto;
 }
 
-#centertable {
-  margin-top: -30px;
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 thead {
   display: none;
@@ -296,9 +290,9 @@ thead {
 table {
   border-collapse: separate;
   border-spacing: 0 40px;
-  border: none;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 10%;
+  width: 60%;
+  margin-top: -30px;
 }
 td {
   display: flow-root;
@@ -324,40 +318,21 @@ tr:hover {
 
 .posts-preview {
   background-color:#3a1027;
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-  /* box-shadow: 0 0 1px 1px #d91a5f; */
-  width: 70%;
+  padding: 10px 10px 10px 20px;
 }
 
 .posts-info {
   padding: 20px;
-  text-align: center;
   background: #242625; 
   box-shadow: 0 1px 1px #d91a5f;
   border-radius: 10px;
   overflow: hidden;
   border-radius: 5px;
   cursor: pointer;
-  width: 70%;
   }
-
-  
 
 #postscontents {
   color: #fff;
   font-size: medium;
-}
-
-#container2 {
-width:100%;
-padding: 0.2%;
-background-color: #242625;
-margin-top: -0.5%;
-margin-left: auto;
-margin-right: auto;
-text-align: center;
 }
 
