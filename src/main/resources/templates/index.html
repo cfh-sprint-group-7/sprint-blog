@@ -60,8 +60,8 @@
                     <div class="content">
                         <a id="postname" th:text="${post.title}"
                             th:href="@{/post/view/{id}(id=${post.id})}"></a>
-                        <h5>Created on: <br /> <span th:text="${post.date}"></span></h5>
                         <h5>Posted by: <br /> <span th:text="${post.author}"></span></h5>
+                        <h5>Created on: <br /> <span th:text="${post.date}"></span></h5>
                     </div>
                 </div>
                 <div class="face face2">
