@@ -172,6 +172,7 @@ body {
 
 .container .card:hover .face.face1 .content {
   opacity: 1;
+  text-overflow: ellipsis;
 }
 
 .container .card .face.face1 .content img {
@@ -184,6 +185,7 @@ body {
   color: #fff;
   text-align: center;
   font-size: 1.5em;
+  text-overflow: ellipsis;
 }
 
 .container .card .face.face2 {
@@ -203,8 +205,9 @@ body {
 }
 
 .container .card .face.face2 .content p {
-  margin: 10;
-  padding: 0;
+  margin: 5;
+  padding: 1;
+  text-overflow: ellipsis;
 }
 
 .container .card .face.face2 .content a {
@@ -215,6 +218,7 @@ body {
   color: #333;
   padding: 5px;
   border: 1px solid #333;
+  text-overflow: ellipsis;
 }
 
 .container .card .face.face2 .content a:hover {
@@ -282,6 +286,20 @@ h2 {
   margin: 0 auto;
 }
 
+.contentsss {
+  height:110px;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  width:220px;
+}
+
+.contentsss2 {
+  height:90px;
+  width:200px;
+  color:#f47a37;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+}
 
 thead {
   display: none;
